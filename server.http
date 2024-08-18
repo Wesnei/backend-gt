@@ -1,0 +1,75 @@
+GET http://localhost:3333/user/2
+
+###
+
+POST http://localhost:3333/user
+Content-Type: application/json
+
+{
+  "id": "2",
+  "firstname": "Wesnei",
+  "surname": "PB",
+  "email": "wes@gmail.com",
+  "password": "123456",
+  "confirmPassword": "123456"
+}
+
+###
+
+PUT http://localhost:3333/user/2
+Content-Type: application/json
+
+{
+  "id": "2",
+  "firstname": "Ranyel",
+  "surname": "PB",
+  "email": "RanyelPB@gmail.com",
+  "password": "12345",
+  "confirmPassword": "12345"
+}
+
+###
+
+DELETE http://localhost:3333/user/2
+
+###
+
+GET http://localhost:3333/category/search?limit=-1
+
+###
+
+GET http://localhost:3333/category/search?limit=5&page=1
+
+###
+
+GET http://localhost:3333/category/1
+
+###
+
+POST http://localhost:3333/category
+Content-Type: application/json
+
+{
+  "name": "Shoes",
+  "slug": "shoes",
+  "use_in_menu": true
+}
+
+##
+
+PUT http://localhost:3333/category/1
+Content-Type: application/json
+
+{
+  "name": "Shoes 2",
+  "slug": "shoes",
+  "use_in_menu": true
+}
+
+###
+
+DELETE http://localhost:3333/category/1
+
+###
+
+GET http://localhost:3333/product/search?limit=10&page=1&fields=name,price&match=Shoes&category_ids=1,2&price-range=50-150
